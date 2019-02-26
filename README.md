@@ -38,7 +38,7 @@ Host: localhost:3000
 
 ### Post a message
 
-Use `POST` to `/data/:id` where `:id` identifies your client. The body is your message. MIME not required.
+Use `POST` to `/data/:id` where `:id` identifies the destination client. The body is your message. MIME not required.
 
 #### Message uploaded
 
