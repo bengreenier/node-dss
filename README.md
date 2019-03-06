@@ -1,5 +1,7 @@
 # node-dss
 
+[![Build Status](https://travis-ci.org/bengreenier/node-dss.svg?branch=master)](https://travis-ci.org/bengreenier/node-dss)
+
 dead simple signalling for webrtc.
 
 ## Why
