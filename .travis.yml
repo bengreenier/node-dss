@@ -3,4 +3,4 @@ script:
   - npm test
 node_js:
   - "node"
-- "lts/*"
+  - "lts/*"
