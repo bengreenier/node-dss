@@ -3,6 +3,7 @@ const Router = require('router')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const debug = require('debug')('dss')
+var cors = require('cors');
 
 const router = Router()
 router.__dataStore = {}
@@ -20,6 +21,7 @@ const morganDebugStream = new stream.Writable({
 })
 
 router.use(morgan('tiny', { stream: morganDebugStream }))
+router.use(cors());
 
 router.param('id', (req, res, next, id) => {
   req.params = {
@@ -35,8 +37,11 @@ router.use(bodyParser.raw({ limit: '10mb', type: () => true }))
 const bodyDebug = debug.extend('body')
 
 router.post('/data/:id', (req, res) => {
+	
   const deviceId = req.params.id
 
+  console.log(`POST req received for device ID ${deviceId}.`);
+  
   if (!router.__dataStore[deviceId]) {
     router.__dataStore[deviceId] = []
   }
@@ -51,8 +56,11 @@ router.post('/data/:id', (req, res) => {
 })
 
 router.get('/data/:id', (req, res) => {
+  	
   const deviceId = req.params.id
 
+  //console.log(`GET req received for ${deviceId}.`);
+  
   if (!router.__dataStore[deviceId] || router.__dataStore[deviceId].length === 0) {
     res.statusCode = 404
     res.end()
