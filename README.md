@@ -18,6 +18,14 @@ First install dependencies with [npm](http://npmjs.com/) - from the project dire
 
 __Without the `DEBUG` environment variable set as-documented above, there will be no output from the process indicating a successful start.__
 
+#### Docker
+
+You can also deploy node-dss using Docker with the following command:
+
+```bash
+docker run -p 3000:3000 animcogn/node-dss:latest
+```
+
 ### Check for a message
 
 Use `GET` to `/data/:id` where `:id` identifies your client
