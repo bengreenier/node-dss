@@ -16,7 +16,7 @@
   "author": "Ben Greenier",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "debug": "^4.1.1",
     "finalhandler": "^1.1.1",
     "morgan": "^1.9.1",
